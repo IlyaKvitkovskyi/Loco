@@ -1,0 +1,26 @@
+@media (max-width: 1200px) {
+  .intro__inner,
+  .about__inner,
+  .slider-wrapper__title,
+  .hero__title,
+  .features__title {
+    margin-left: 40px;
+  }
+
+  .features__title {
+    max-width: 470px;
+  }
+
+  .features {
+    .features-container__item1 {
+      margin-top: 40px;
+      margin-left: 40em;
+    }
+    .features-container__item2 {
+      margin-left: 10em;
+    }
+    .features-container__item3 {
+      margin-left: 40em;
+    }
+  }
+}
