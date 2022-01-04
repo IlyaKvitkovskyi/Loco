@@ -8,7 +8,7 @@
 .container {
   max-width: 1400px;
   width: 100%;
-  padding: 0 10px;
+  padding: 0 20px;
   margin: 0 auto;
 }
 
@@ -455,7 +455,7 @@
     font-size: 37px;
     line-height: 44px;
     color: #fff;
-    max-width: 290px;
+    max-width: 470px;
     margin-left: 100px;
   }
 
@@ -620,11 +620,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-basis: 50%;
   }
   &__title,
   &__subtitle {
-    max-width: 45%;
+    width: 45%;
   }
   &__subtitle {
     margin-left: 100px;
@@ -640,8 +639,12 @@
   max-width: 500px;
 }
 
+.contacts__title-wrapper {
+  width: calc(60%);
+}
+
 .form-container {
-  flex-basis: 50%;
+  width: calc(40%);
 }
 
 input {
@@ -649,6 +652,7 @@ input {
   border-bottom: 0.5px solid #858585;
   background: transparent;
   width: 100%;
+  color: #fff;
 }
 input:focus {
   outline: none;
@@ -706,6 +710,10 @@ label {
 .top {
   padding-bottom: 200px;
 
+  &__wrapper {
+    margin-left: 100px;
+  }
+
   &__title {
     font-size: 14px;
     color: #fff;
@@ -717,6 +725,21 @@ label {
 
 .footer {
   font-weight: 600;
+
+  &__wrapper-text {
+    width: 100%;
+    display: flex;
+    
+  }
+
+  .first__item {
+    width: 30%;
+  }
+
+  &__wrapper {
+    margin-left: 100px;
+  }
+
   &__top,
   &__head,
   &__bottom {
@@ -728,8 +751,8 @@ label {
   }
 
   &__item-inner {
-      width: 100%;
-      max-width: 260px;
+      // width: 100%;
+      // max-width: 260px;
 
       display: flex;
       flex-direction: column;
@@ -738,7 +761,7 @@ label {
 
   &__item {
       width: 100%;
-      max-width: 260px;
+      // max-width: 260px;
 
       &:first-child {
           max-width: 330px;
