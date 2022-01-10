@@ -729,7 +729,6 @@ label {
   &__wrapper-text {
     width: 100%;
     display: flex;
-    
   }
 
   .first__item {
@@ -792,6 +791,16 @@ label {
               transition: color 0.3s;
           }
       }
+  }
+
+  &__left-side {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__item-contacts-adaptive {
+    display: none;
   }
 
   .socials {
