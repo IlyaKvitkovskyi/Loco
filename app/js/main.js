@@ -9,5 +9,12 @@ $(document).ready(function(){
     return false;
   });	
   
-  
+  new Swiper('.swiper-container', {
+    // Optional parameters
+    loop: false,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    initialSlide: 3,
+    slideToClickedSlide: true,
+  });
 });
