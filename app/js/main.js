@@ -7,5 +7,7 @@ $(document).ready(function(){
       $('.content_toggle').html('Скрыть');
     }		
     return false;
-  });				
+  });	
+  
+  
 });
