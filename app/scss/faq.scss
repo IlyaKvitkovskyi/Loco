@@ -119,9 +119,17 @@
   margin-left: 0;
 }
 
+.contacts__subtitle {
+  width: 55%;
+}
+
 @media (max-width: 640px) {
   .header .menu-button {
     display: block;
+  }
+
+  .faq__wrapper-subtitle {
+    width: 50%;
   }
 }
 
@@ -141,10 +149,6 @@
 
   .faq {
     padding-bottom: 100px;
-  }
-
-  .faq__wrapper-subtitle {
-    width: 60%;
   }
 
   .faq__title {
