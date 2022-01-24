@@ -33,7 +33,7 @@ $(function () {
     slidesPerView: 'auto',
     spaceBetween: 30,
     // centeredSlides: true,
-    initialSlide: 3,
+    initialSlide: 1,
     slideToClickedSlide: true,
   });
 
@@ -44,7 +44,7 @@ $(function () {
     slidesPerView: 'auto',
     // spaceBetween: 30,
     // centeredSlides: true,
-    initialSlide: 1,
+    initialSlide: 0,
     slideToClickedSlide: true,
   });
 
@@ -65,5 +65,26 @@ $(function () {
     slidesPerView: 'auto',
     initialSlide: 0,
     slideToClickedSlide: true,
+  });
+
+  new Swiper('.swiper5', {
+    spaceBetween: 20,
+    width: 380,
+
+    breakpoints: {
+      960: {
+        enabled: false,
+        // slideToClickedSlide: true,
+      },
+      640: {
+        enabled: true,
+        loop: false,
+        slideToClickedSlide: true,
+      },
+      320: {
+        enabled: true,
+        loop: false,
+      },
+    },
   });
 });
