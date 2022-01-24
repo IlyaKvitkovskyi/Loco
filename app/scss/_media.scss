@@ -647,7 +647,7 @@
     width: 100%;
   }
   .contacts__title {
-    width: 100%;
+    width: 80%;
   }
   .text__hide {
     width: 70%;
@@ -660,6 +660,19 @@
   }
   .footer__left {
     width: 170%;
+  }
+
+  .breadcrumbs {
+    padding: 50px 0 70px 0;
+  }
+
+  .breadcrumbs__link {
+    font-size: 9px;
+    line-height: 11px;
+  }
+
+  .breadcrumbs__item:first-child::after {
+    font-size: 9px;
   }
 }
 
