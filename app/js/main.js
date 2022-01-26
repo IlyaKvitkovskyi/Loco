@@ -8,21 +8,28 @@ $(function () {
     $this.toggleClass('active');
   });
 
-  var clickMe = document.querySelector('.content_toggle');
-  var el = document.querySelectorAll('.content_block');
+  let clickMe = document.querySelector('.content_toggle');
+  let el = document.querySelectorAll('.content_block');
+  let buttonContent = '';
 
   document.addEventListener('click', function (event) {
+    console.log(event)
     if (!event.target.matches('.content_toggle')) return;
-    console.log(el);
-    el.forEach((item) => {
-      item.classList.toggle('hide');
-    });
 
-    if (el[0].classList.contains('hide')) {
-      clickMe.innerHTML = 'Показать всё';
-    } else {
-      clickMe.innerHTML = 'Скрыть';
-    }
+    const clickedButton = event.srcElement;
+    const elems = clickedButton.parentNode.querySelectorAll('.content_block');
+
+    elems.forEach((item) => {
+      item.classList.toggle('hide');
+      if (item.classList.contains('hide')) {
+        clickedButton.innerHTML = buttonContent;
+      } else {
+        buttonContent = clickMe.innerHTML;
+        clickedButton.innerHTML = 'Скрыть';
+      }
+    });
+    // element.classList.toggle('hide');
+
     return false;
   });
 
