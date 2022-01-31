@@ -109,7 +109,62 @@ ul.new-seo__items-list {
 }
 // /.CONTACTS
 
+// ADVANTAGES
+.advantages {
+  padding-top: 160px;
 
-// .advantages {
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
 
-// }
+  &__item {
+    width: 260px;
+    position: relative;
+  }
+
+  &__main-title {
+    font-size: 37px;
+    line-height: 44px;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    font-size: 13px;
+    line-height: 16px;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    font-size: 11px;
+    line-height: 19px;
+    color: #858585;
+  }
+
+  &__subitem-top {
+    margin-bottom: 40px;
+  }
+
+  &__small,
+  &__big {
+    padding: 45px 20px 50px 20px;
+    background-color: #141414;
+  }
+
+  &__small {
+    height: 295px;
+    margin-bottom: 40px;
+  }
+
+  &__big {
+    height: 400px;
+  }
+
+  &__img {
+    margin-bottom: 20px;
+  }
+}
+// /.ADVANTAGES
