@@ -1,4 +1,21 @@
 $(function () {
+
+
+
+  $('.seo-reviews__tabs-top-item').on('click', function(e) {
+    e.preventDefault();
+
+    $('.seo-reviews__tabs-top-item').removeClass('seo-reviews__tabs-top-item--active');
+    $(this).addClass('seo-reviews__tabs-top-item--active');
+
+    $('.seo-reviews__tabs-content-item').removeClass('seo-reviews__tabs-content-item--active');
+    $($(this).attr('href')).addClass('seo-reviews__tabs-content-item--active');
+  });
+
+
+
+
+
   $('[data-collapse]').on('click', function (event) {
     event.preventDefault();
 
