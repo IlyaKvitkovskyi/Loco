@@ -3,15 +3,6 @@
 @import 'reset';
 @import 'global';
 
-@font-face {
-  font-family: 'RF Dewi Expanded';
-  font-weight: 900;
-  font-style: normal;
-  src: local('RFDewiExpanded'), url('../fonts/RFDewiExpanded-UltraBold.woff2') format('woff2'),
-    url('../fonts/RFDewiExpanded-UltraBold.woff') format('woff');
-  font-display: swap;
-}
-
 .footer__wrapper,
 .top__wrapper {
   margin-left: 0;
