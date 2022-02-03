@@ -44,8 +44,15 @@ body {
         color: #fff;
       }
     }
+    &:nth-child(2) {
+      margin-left: 5px;
+      &::after {
+        content: '/';
+        color: #fff;
+      }
+    }
     &:last-child {
-      margin-left: 3px;
+      margin-left: 5px;
       color: #fff;
     }
   }
@@ -74,6 +81,9 @@ body {
 
 .pagination__link--active {
   color: #f1ff39;
+}
+.btn {
+  filter: saturate(200%);
 }
 
 
