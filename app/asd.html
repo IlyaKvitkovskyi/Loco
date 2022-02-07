@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="stylesheet" href="css/chart.min.css" />
+  </head>
+  <body>
+    <section>
+      <div class="contaner">
+        <div class="chart-box">
+          <canvas id="myChart" width="600" height="300" style="background-color: #000"></canvas>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      class Custom extends Chart.LineController {
+        draw() {
+          super.draw(arguments);
+          const ctx = this.chart.ctx;
+          let _stroke = ctx.stroke;
+
+          ctx.stroke = function () {
+            ctx.save();
+            ctx.shadowColor = '#F1FF39';
+            ctx.shadowBlur = 10;
+            ctx.shadowOffsetX = 4;
+            ctx.shadowOffsety = 0;
+            _stroke.apply(this, arguments);
+            ctx.restore();
+          };
+        }
+      }
+
+      Custom.id = 'shadowLine';
+      Custom.defaults = Chart.LineController.defaults;
+
+      Chart.register(Custom);
+
+      const labels = ['January', 'February', 'March', 'April', 'May', 'June'];
+
+      const data = {
+        type: 'shadowLine',
+        legend: {
+          display: false,
+        },
+        labels: labels,
+        datasets: [
+          {
+            // label: 'My First dataset',
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            tension: 0.4,
+            data: [0, 10, 5, 2, 20, 30, 45],
+            borderColor: 'rgba(241, 255, 57, 1)',
+            // borderWidth: 0.1,
+
+            backgroundColor: '#000',
+            pointBackgroundColor: '#000',
+            pointBorderColor: '#F1FF39',
+            pointHoverBackgroundColor: '#000',
+            pointHoverBorderColor: '#000',
+            pointRadius: 8,
+            pointHoverRadius: 2,
+            tension: 0.4,
+            fill: false,
+          },
+        ],
+      };
+
+      const config = {
+        type: 'shadowLine',
+        data: data,
+        options: {
+          legend: {
+            display: false,
+          },
+          scales: {
+            y: {
+              grid: {
+                display: false,
+                color: 'white',
+              },
+            },
+            x: {
+              grid: {
+                display: true,
+                color: '#141414',
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <script>
+      const myChart = new Chart(document.getElementById('myChart'), config);
+    </script>
+  </body>
+</html>
