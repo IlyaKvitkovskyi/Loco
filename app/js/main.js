@@ -1,8 +1,15 @@
 $(function () {
+  $('.header__burger').on('click', function (event) {
+    $('.header__burger, .header__menu').toggleClass('active');
+    $('html').toggleClass('lock');
+  });
 
+  $('.menu__btn').on('click', function (event) {
+    $('.header__burger, .header__menu').toggleClass('active');
+  });
+  
 
-
-  $('.seo-reviews__tabs-top-item').on('click', function(e) {
+  $('.seo-reviews__tabs-top-item').on('click', function (e) {
     e.preventDefault();
 
     $('.seo-reviews__tabs-top-item').removeClass('seo-reviews__tabs-top-item--active');
@@ -11,10 +18,6 @@ $(function () {
     $('.seo-reviews__tabs-content-item').removeClass('seo-reviews__tabs-content-item--active');
     $($(this).attr('href')).addClass('seo-reviews__tabs-content-item--active');
   });
-
-
-
-
 
   $('[data-collapse]').on('click', function (event) {
     event.preventDefault();
@@ -30,7 +33,7 @@ $(function () {
   let buttonContent = '';
 
   document.addEventListener('click', function (event) {
-    console.log(event)
+    console.log(event);
     if (!event.target.matches('.content_toggle')) return;
 
     const clickedButton = event.srcElement;
@@ -112,3 +115,60 @@ $(function () {
     },
   });
 });
+
+$(function () {
+  var header = $('#header'),
+    introH = $('#intro').innerHeight(),
+    scrollOffset = $(window).scrollTop();
+
+  /* Fixed header */
+  checkScroll(scrollOffset);
+
+  $(window).on('scroll', function () {
+    scrollOffset = $(this).scrollTop();
+
+    checkScroll(scrollOffset);
+  });
+
+  function checkScroll(scrollOffset) {
+    if (scrollOffset >= introH) {
+      header.addClass('fixed');
+    } else {
+      header.removeClass('fixed');
+    }
+  }
+});
+
+$(function () {
+  let FormS = document.querySelector('.form-data');
+
+  
+
+  FormS.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let elem = e.target;
+
+    let formData = {
+      name: elem.querySelector('[name="user_name"]').value,
+      phone: elem.querySelector('[name="user_phone"]').value,
+    };
+
+    axios
+      .post('https://ww1uzy2qda.api.quickmocker.com/illia', {
+        user_name: formData.name,
+        user_phone: formData.phone,
+      })
+      .then(function (res) {
+        // FormS.classList.add('_send');
+       
+        
+        alert(res);
+      })
+      .catch(function (error) {
+        alert(error);
+      });
+  });
+});
+
+const popupLinks = document.querySelectorAll('.popup-link');
+
