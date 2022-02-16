@@ -22,6 +22,18 @@
     padding-bottom: 100px;
   }
 
+  .header__menu {
+    transform: translateY(-200%);
+  }
+
+  .header__menu.active {
+    padding: 35px;
+    width: 100%;
+    transform: translateY(0);
+    overflow-y: auto;
+    left: 0;
+  }
+
   .about__inner {
     padding-top: 100px;
   }
@@ -80,12 +92,15 @@
 }
 
 @media (max-width: 960px) {
-  .header {
-    .header__list-link,
-    .nav__address {
-      display: none;
-    }
+  .header__list-phone,
+  .header__list-address {
+    display: none;
   }
+
+  .header__menu-wrapper {
+    flex-direction: column;
+  }
+
   .intro {
     &__title {
       font-size: 45px;
@@ -338,6 +353,32 @@
 }
 
 @media (max-width: 640px) {
+  .header__link {
+    font-size: 15px;
+    line-height: 17px;
+  }
+  .header__list li {
+    margin-bottom: 10px;
+  }
+  .header__menu.active {
+    padding: 20px;
+  }
+
+  .header__burger.active {
+    top: -14px;
+  }
+
+  ul.header__list-left {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .header__menu-title {
+    margin-bottom: 35px;
+    font-size: 22px;
+    line-height: 25px;
+  }
+
   .intro {
     min-height: 320px;
     &__title {
@@ -574,6 +615,32 @@
 }
 
 @media (max-width: 480px) {
+  .header__link {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .header__list li {
+    margin-bottom: 10px;
+  }
+  .header__menu.active {
+    padding: 20px;
+  }
+
+  .header__burger.active {
+    top: -14px;
+  }
+
+  ul.header__list-left {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .header__menu-title {
+    margin-bottom: 35px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  
   .hint-container {
     padding-right: 40px;
   }
@@ -593,7 +660,7 @@
   .about__list-second {
     width: 50%;
   }
-  
+
   .stats__item {
     flex-basis: 100%;
     &-num {
@@ -620,9 +687,13 @@
   }
 
   .slide-review__thumb {
-    width: 300px;
+    width: 100%;
     height: 170px;
-    margin-left: 35px;
+    margin-left: 0;
+  }
+
+  .slide-review {
+    padding: 20px;
   }
 
   .slider-container_moved {
@@ -635,7 +706,7 @@
 
   .gallery__video-link {
     bottom: 3em;
-    left: 9em;
+    left: 10em;
   }
 
   .certification__title-text {
@@ -672,10 +743,6 @@
 }
 
 @media (max-width: 420px) {
-  .slide-review__thumb {
-    margin-left: 30px;
-  }
-
   .slide-review {
     margin-right: 0;
   }
