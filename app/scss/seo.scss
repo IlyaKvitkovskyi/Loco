@@ -4,6 +4,7 @@
 @import 'global';
 
 .top {
+  padding-top: 100px;
   display: none;
 }
 
@@ -17,6 +18,20 @@
   margin-left: 0;
 }
 
+
+ul.header__list {
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+ul.header__list-left {
+  margin-right: 100px;
+}
+
+.header {
+  position: fixed;
+  background-color: #000;
+}
 
 
 // IDEA
@@ -51,7 +66,7 @@
     background-color: #f1ff39;
     box-shadow: 0px 0px 12px #f1ff39;
     position: absolute;
-    top: -30px;
+    top: -20px;
   }
 
   &__text {
@@ -181,10 +196,6 @@ ul.new-seo__items-list {
     display: none;
   }
 
-  .header {
-    position: relative;
-  }
-
   .top {
     display: block;
   }
@@ -210,9 +221,9 @@ ul.new-seo__items-list {
 }
 
 @media (max-width: 640px) {
-  .header .menu-button {
-    display: block;
-  }
+  // .header .menu-button {
+  //   display: block;
+  // }
 
   .new-seo {
     &__title {

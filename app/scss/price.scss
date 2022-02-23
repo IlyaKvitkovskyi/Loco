@@ -3,8 +3,18 @@
 @import 'reset';
 @import 'global';
 
+ul.header__list {
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+ul.header__list-left {
+  margin-right: 100px;
+}
+
 .header {
-  position: relative;
+  position: fixed;
+  background-color: #000;
 }
 
 .footer__wrapper,
@@ -18,7 +28,7 @@
 }
 
 .pricing {
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 
   &__wrapper {
     display: none;
@@ -52,7 +62,7 @@
     flex-direction: column;
     min-width: 380px;
     background-color: #141414;
-    padding: 40px;
+    padding: 20px;
   }
 
   &__name {

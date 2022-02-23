@@ -3,8 +3,18 @@
 @import 'reset';
 @import 'global';
 
+ul.header__list {
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+ul.header__list-left {
+  margin-right: 100px;
+}
+
 .header {
-  position: relative;
+  position: fixed;
+  background-color: #000;
 }
 
 .footer__wrapper,

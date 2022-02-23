@@ -91,11 +91,17 @@ $(function () {
   });
 
   new Swiper('.swiper4', {
-    width: 1500,
-    loop: false,
-    slidesPerView: 'auto',
-    initialSlide: 0,
-    slideToClickedSlide: true,
+    breakpoints: {
+      640: {
+        enabled: true,
+        // slideToClickedSlide: true,
+        width: 1400,
+        loop: false,
+        slidesPerView: 'auto',
+        initialSlide: 0,
+      },
+    }
+    // slideToClickedSlide: true,
   });
 
   new Swiper('.swiper5', {
@@ -145,6 +151,8 @@ $(function () {
   }
 });
 // /.FIXED HEADER
+
+
 
 const formS = document.querySelectorAll('.form-data');
 const popup = document.querySelector('.popup');

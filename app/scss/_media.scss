@@ -122,9 +122,9 @@
     margin-left: 0;
   }
 
-  .slide-case {
-    padding-left: 40px;
-  }
+  // .slide-case {
+  //   padding-left: 40px;
+  // }
 
   .second__slider {
     display: flex;
@@ -425,7 +425,10 @@
   }
 
   .slider-container {
-    margin-left: 0;
+    margin-left: 20px;
+  }
+  .slider-container_moved {
+    margin-left: 20px;
   }
 
   .swiper3 {
@@ -726,10 +729,6 @@
   }
   .footer__left {
     width: 170%;
-  }
-
-  .breadcrumbs {
-    padding: 50px 0 70px 0;
   }
 
   .breadcrumbs__link {

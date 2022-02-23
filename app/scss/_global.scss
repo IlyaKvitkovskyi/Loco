@@ -22,14 +22,18 @@ body {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1180px;
   width: 100%;
   padding: 0 20px;
   margin: 0 auto;
 }
 
+.top {
+  padding-top: 150px;
+}
+
 .breadcrumbs {
-  padding: 100px 0;
+ 
 
   &__list {
     display: flex;
@@ -93,6 +97,10 @@ body {
   color: #ffffff;
   margin-bottom: 40px;
   text-transform: uppercase;
+}
+
+.seo__text {
+  padding-bottom: 50px;
 }
 
 // SEO-REVIEWS

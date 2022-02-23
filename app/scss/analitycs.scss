@@ -13,8 +13,18 @@
   margin-left: 0;
 }
 
+ul.header__list {
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+ul.header__list-left {
+  margin-right: 100px;
+}
+
 .header {
-  position: relative;
+  position: fixed;
+  background-color: #000;
 }
 
 .title {
@@ -99,6 +109,10 @@ ul.analitycs__items-list {
 }
 .contacts {
   display: none;
+}
+
+.seo__text {
+  padding-bottom: 50px;
 }
 
 @media (max-width: 1200px) {
