@@ -28,8 +28,6 @@ $(function () {
     $this.toggleClass('active');
   });
 
-  // let clickMe = document.querySelector('.content_toggle');
-  // let el = document.querySelectorAll('.content_block');
   let buttonContent = '';
 
   document.addEventListener('click', function (event) {
@@ -48,8 +46,6 @@ $(function () {
         clickedButton.innerHTML = 'Скрыть';
       }
     });
-    // element.classList.toggle('hide');
-
     return false;
   });
 
@@ -60,12 +56,10 @@ $(function () {
 
   // ADDED SLIDERS
   new Swiper('.swiper1', {
-    // Optional parameters
     width: 1500,
     loop: false,
     slidesPerView: 'auto',
     spaceBetween: 30,
-    // centeredSlides: true,
     initialSlide: 0,
     slideToClickedSlide: true,
   });

@@ -3,9 +3,12 @@
 @import 'reset';
 @import 'global';
 
-.top {
-  padding-top: 100px;
+.top-breadcrumbs {
   display: none;
+}
+
+.seo-top {
+  padding-top: 0;
 }
 
 .footer__wrapper,
@@ -18,7 +21,6 @@
   margin-left: 0;
 }
 
-
 ul.header__list {
   flex-direction: column;
   margin-bottom: 25px;
@@ -30,9 +32,8 @@ ul.header__list-left {
 
 .header {
   position: fixed;
-  background-color: #000;
+  background-color: transparent;
 }
-
 
 // IDEA
 .idea {
@@ -85,7 +86,8 @@ ul.header__list-left {
 .new-seo {
   padding-bottom: 50px;
   background-color: #141414;
-  &__title {
+
+  h1 {
     font-size: 37px;
     line-height: 44px;
     color: #fff;
@@ -93,7 +95,7 @@ ul.header__list-left {
     margin-bottom: 20px;
   }
 
-  &__subtitle {
+  h2 {
     font-size: 16px;
     line-height: 155%;
     color: #fff;
@@ -101,23 +103,27 @@ ul.header__list-left {
     margin-bottom: 15px;
   }
 
-  &__text,
-  &__text-title {
+  span {
+    display: block;
+  }
+
+  p,
+  span {
     margin-bottom: 10px;
     font-size: 14px;
     line-height: 22px;
   }
 
-  &__text {
+  p {
     margin-bottom: 34px;
   }
 
-  &__text-title {
+  span {
     color: #fff;
   }
 }
 
-ul.new-seo__items-list {
+ul {
   padding-left: 30px;
   list-style: disc;
 }
@@ -196,37 +202,30 @@ ul.new-seo__items-list {
     display: none;
   }
 
-  .top {
-    display: block;
+  .top-breadcrumbs {
+    padding-top: 150px;
+    display: flex;
   }
 
   .new-seo__wrapper.hide {
     height: 100%;
   }
-
-  .content_block.hide:after {
-    height: 0px;
-  }
 }
 
 @media (max-width: 960px) {
   .new-seo {
-    &__title {
+    h1 {
       margin-bottom: 70px;
     }
-    &__subtitle {
+    h2 {
       max-width: 59%;
     }
   }
 }
 
 @media (max-width: 640px) {
-  // .header .menu-button {
-  //   display: block;
-  // }
-
   .new-seo {
-    &__title {
+    h1 {
       padding-bottom: 40px;
       margin-bottom: 40px;
       border-bottom: 0.5px solid #858585;
@@ -235,7 +234,9 @@ ul.new-seo__items-list {
 }
 
 @media (max-width: 480px) {
-  .new-seo__subtitle {
-    max-width: 100%;
+  .new-seo {
+    h2 {
+      max-width: 100%;
+    }
   }
 }
