@@ -1,0 +1,16 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+
+.intro {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    text-transform: uppercase;
+    font-size: 35px;
+  }
+}
