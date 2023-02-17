@@ -1,0 +1,276 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+
+.intro {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    text-transform: uppercase;
+    font-size: 35px;
+  }
+}
+
+.social-bots {
+  padding-bottom: 100px;
+
+  &__intro {
+    position: relative;
+  }
+
+  &__logo {
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    font-family: 'RF Dewi Expanded';
+    font-weight: 600;
+    font-size: 37px;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    font-family: 'RF Dewi Expanded';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 155%;
+  }
+
+  .text {
+    position: absolute;
+    top: 34%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 380px;
+    align-items: center;
+    right: 33%;
+    background-color: #000;
+    border-radius: 150px;
+  }
+}
+
+.develop-advantages {
+  padding-top: 100px;
+  padding-bottom: 150px;
+  &__title {
+    text-align: center;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    column-count: 4;
+    column-gap: 15px;
+  }
+
+  &__item {
+    margin-bottom: 15px;
+    background-color: #141414;
+    padding: 25px;
+    max-width: 270px;
+    min-height: 260px;
+  }
+
+  &__subtitle {
+    margin-bottom: 25px;
+    font-family: 'RF Dewi Expanded';
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+    color: #ffffff;
+  }
+
+  &__text {
+    font-family: 'RF Dewi Expanded';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 19px;
+    color: #858585;
+  }
+
+  &__ball {
+    display: block;
+    margin-bottom: 25px;
+    width: 8px;
+    height: 8px;
+    background: #f1ff39;
+    box-shadow: 0px 0px 12px #f1ff39;
+    border-radius: 500px;
+  }
+}
+
+.bots-info {
+  &__wrap {
+    margin-left: 100px;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 100px;
+  }
+
+  &__item--second {
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  &__title {
+    font-family: 'RF Dewi Expanded';
+    font-weight: 600;
+    font-size: 37px;
+    line-height: 44px;
+    text-transform: uppercase;
+    color: #ffffff;
+    max-width: 580px;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-family: 'RF Dewi Expanded';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 30px;
+    max-width: 490px;
+  }
+
+  &__images {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.our-clients {
+  padding-bottom: 150px;
+
+  &__title {
+    font-family: 'RF Dewi Expanded';
+    font-weight: 600;
+    font-size: 37px;
+    line-height: 44px;
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 55px;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+  }
+
+  &__item {
+    cursor: pointer;
+    padding: 12px;
+    background-color: #141414;
+    font-family: 'RF Dewi Expanded';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: #858585;
+    margin-bottom: 10px;
+  }
+
+  &__item:hover {
+    background-color: #f1ff39;
+    color: #000;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+@media (max-width: 448px) {
+  .img-wrap,
+  .social-bots__intro img {
+    display: none;
+  }
+
+  .intro__inner {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .hint-container {
+    bottom: 25% !important;
+  }
+
+  .social-bots {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .social-bots .text {
+    position: unset;
+    background-color: transparent;
+  }
+
+  .social-bots__title,
+  .title,
+  .bots-info__title,
+  .our-clients__title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .social-bots__text {
+    font-size: 13px;
+  }
+
+  .bots-info__item {
+    display: flex;
+    flex-direction: column;
+
+    .container {
+      order: 2;
+    }
+  }
+
+  .bots-info__item--mb {
+    margin-bottom: -60px;
+  }
+
+  .bots-info__images {
+    order: 1;
+    position: unset;
+    margin-bottom: 30px;
+  }
+
+  .bots-info__item--second {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bots-info__wrap {
+    margin-left: 0;
+  }
+
+  .our-clients {
+    padding-bottom: 100px;
+  }
+
+  .our-clients__title {
+    margin-bottom: 30px;
+  }
+
+  .our-clients__item {
+    font-size: 13px;
+  }
+}
