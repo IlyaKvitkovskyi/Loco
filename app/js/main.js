@@ -94,7 +94,7 @@ $(function () {
         slidesPerView: 'auto',
         initialSlide: 0,
       },
-    }
+    },
     // slideToClickedSlide: true,
   });
 
@@ -145,8 +145,6 @@ $(function () {
   }
 });
 // /.FIXED HEADER
-
-
 
 const formS = document.querySelectorAll('.form-data');
 const popup = document.querySelector('.popup');
@@ -199,19 +197,19 @@ async function fetchData() {
 //   return false;
 // });
 
-const buttons = document.querySelectorAll(".btnForm");
+const buttons = document.querySelectorAll('.btnForm');
 
 for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function() {
+  buttons[i].addEventListener('click', function () {
     let inp;
     // если содержимое нажатой кнолки ОСТАВИТЬ ЗАЯВКУ, в переменную inp записать содержимое значение инпута с необхожимым id
-    if (buttons[i].innerHTML === "ОСТАВИТЬ ЗАЯВКУ") {
+    if (buttons[i].innerHTML === 'ОСТАВИТЬ ЗАЯВКУ') {
       inp = document.getElementById('phone');
     } else {
-      inp = document.getElementById("phoneInPopup"); 
+      inp = document.getElementById('phoneInPopup');
     }
 
-    console.log('we are here')
+    console.log('we are here');
 
     if (!validate(reg, inp.value)) {
       notValid(inp);
@@ -232,7 +230,6 @@ function notValid(inp) {
   popupNotValid.classList.add('active');
   $('html').addClass('lock');
   inp.classList.add('is-invalid');
- 
 }
 
 function valid(inp) {
@@ -255,3 +252,17 @@ popupCloseNotValid.onclick = function () {
   popupNotValid.classList.remove('active');
   $('html').removeClass('lock');
 };
+
+const root = document.documentElement;
+
+const marqueeElementsDisplayed = getComputedStyle(root).getPropertyValue('--marquee-elements-displayed');
+
+const marqueeContents = document.querySelectorAll('.marquee-content');
+
+marqueeContents.forEach((marqueeContent) => {
+  root.style.setProperty('--marquee-elements', marqueeContent.children.length);
+  
+  for (let i = 0; i < marqueeElementsDisplayed; i++) {
+    marqueeContent.appendChild(marqueeContent.children[i].cloneNode(true));
+  }
+});

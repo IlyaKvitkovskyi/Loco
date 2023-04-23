@@ -7,6 +7,8 @@ const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const del = require('del');
 const browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const deploy = require('gulp-gh-pages');
 
 function browsersync() {
   browserSync.init({
@@ -18,22 +20,24 @@ function browsersync() {
 }
 
 function styles() {
-  return src('app/scss/*.scss')
-    .pipe(sass({ outputStyle: 'compressed' }))
-    // .pipe(concat())
-    .pipe(
-      rename({
-        suffix: '.min',
-      }),
-    )
-    .pipe(
-      autoprefixer({
-        overrideBrowserslist: ['last 10 versions'],
-        grid: true,
-      }),
-    )
-    .pipe(dest('app/css'))
-    .pipe(browserSync.stream());
+  return (
+    src('app/scss/*.scss')
+      .pipe(sass({ outputStyle: 'compressed' }))
+      // .pipe(concat())
+      .pipe(
+        rename({
+          suffix: '.min',
+        }),
+      )
+      .pipe(
+        autoprefixer({
+          overrideBrowserslist: ['last 10 versions'],
+          grid: true,
+        }),
+      )
+      .pipe(dest('app/css'))
+      .pipe(browserSync.stream())
+  );
 }
 
 function scripts() {
@@ -60,7 +64,20 @@ function images() {
 }
 
 function build() {
-  return src(['app/**/*.html', 'app/css/style.min.css', 'app/js/main.min.js'], {
+  // return src(
+  //   [
+  //     'app/**/*.html',
+  //     'app/css/style.min.css',
+  //     'app/css/**/*.css',
+  //     'app/scss/**/*.scss',
+  //     'app/js/main.min.js',
+  //   ],
+  //   {
+  //     base: 'app',
+  //   },
+  // ).pipe(dest('dist'));
+
+  return src(['app/**'], {
     base: 'app',
   }).pipe(dest('dist'));
 }
@@ -74,6 +91,10 @@ function watching() {
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/**/*.html']).on('change', browserSync.reload);
 }
+
+gulp.task('deploy', function () {
+  return gulp.src('./dist/**/*').pipe(deploy());
+});
 
 exports.styles = styles;
 exports.scripts = scripts;
